@@ -1,0 +1,163 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(255, 99, 71, 0.5); /* Tomato red with transparency */
+  background: linear-gradient(135deg, rgba(255, 99, 71, 0.7), rgba(255, 204, 0, 0.5)); /* Gradient with transparency */
+}
+
+
+
+.calendar-container {
+  display: flex;
+  max-width: 900px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  gap: 20px;
+}
+
+.calendar {
+  width: 60%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header button {
+  background-color: rgba(106, 90, 205, 0.8); /* Transparent lavender */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header button:hover {
+  background-color: rgba(106, 90, 205, 1); /* Hover with full opacity */
+  transform: translateY(-5px); /* Upward hover effect */
+}
+
+.header h1 {
+  font-size: 1.5rem;
+}
+
+.days-of-week,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.days div {
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  background: rgba(234, 234, 234, 0.7); /* Slight transparency */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.days div:hover {
+  background: rgba(211, 184, 255, 0.9); /* Light purple with transparency */
+  transform: translateY(-5px); /* Hover moves element up */
+}
+
+.days .selected {
+  background-color: rgba(106, 90, 205, 1); /* Fully opaque selected date */
+  color: white;
+}
+
+.days .today {
+  background-color: rgba(255, 255, 0, 0.7); /* Transparent yellow for today */
+  color: black;
+  transform: translateY(-5px); /* Move up on hover */
+}
+
+.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer input {
+  padding: 5px;
+  width: 80px;
+  text-align: center;
+}
+
+.footer button {
+  padding: 5px 10px;
+  border: none;
+  background-color: rgba(106, 90, 205, 0.8); /* Transparent button color */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer button:hover {
+  background-color: rgba(106, 90, 205, 1); /* Full opacity on hover */
+  transform: translateY(-5px); /* Move button up on hover */
+}
+
+.event-panel {
+  width: 40%;
+  background: rgba(45, 47, 69, 0.8); /* Semi-transparent dark background */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.event-panel h2 {
+  font-size: 1.2rem;
+}
+
+.event-panel p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #bbb;
+}
+
+#add-event,
+#delete-event {
+  background-color: rgba(106, 90, 205, 0.8); /* Transparent button color */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#delete-event {
+  background-color: red;
+}
+
+#delete-event:hover {
+  background-color: rgb(249, 61, 61);
+  transform: translateY(-5px);
+}
+
+#add-event:hover {
+  background-color: rgba(106, 90, 205, 1); /* Full opacity on hover */
+  transform: translateY(-5px); /* Move up on hover */
+}
+
+#delete-event {
+  display: none; /* Initially hidden */
+}

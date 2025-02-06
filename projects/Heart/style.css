@@ -1,0 +1,37 @@
+img {
+    position: absolute;      
+    top: 50%;                
+    left: 50%;               
+    transform: translate(-50%, -50%); 
+    max-width: 90%;          
+    max-height: 90%;         
+    width: auto;             
+    height: auto;            
+  }
+  
+  
+      .image-container {
+        margin: auto;     
+      }
+  
+      h1 {
+        position: absolute; 
+        top: 5%;           
+        left: 50%;          
+        transform: translateX(-50%); 
+        margin: 0;         
+      }
+  
+  
+  
+      @media (min-width: 768px) {
+        img {
+          width: 50%; 
+        }
+      }
+  
+      @media (min-width: 1200px) {
+        img {
+          width: 30%;
+        }
+      }

@@ -1,0 +1,214 @@
+/* Reset styles */
+body, h1, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(90deg, #b74b4b, #b74b4b);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.8rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.menu-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-btn {
+    padding: 8px 15px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    height: 39px;
+}
+
+.menu-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-container {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-container input {
+    padding: 8px 15px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    width: 200px;
+}
+
+/* Normal placeholder position (centered vertically) */
+.search-container label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+/* Placeholder position when input is focused or has content */
+/* Moves up by 5px and becomes smaller */
+.search-container input:focus ~ label,
+.search-container input:valid ~ label {
+    top: -5px;
+    left: 10px;
+    font-size: 12px;
+    color: white;
+}
+
+.search-container input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.category-filters {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 150px;
+}
+
+.category-filters.show {
+    display: flex;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 2px solid #b74b4b;
+    border-radius: 5px;
+    background: transparent;
+    color: #b74b4b;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #b74b4b;
+    color: white;
+}
+
+.filter-btn.active {
+    background: #b74b4b;
+    color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-color: #e0f7fa;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px solid #b2ebf2;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide empty grid items */
+.grid-item:empty,
+.grid-item[href="#"] {
+    display: none;
+}
+
+.grid-item:hover {
+    background-color: #b2ebf2;
+    border-color: #0073e6;
+    color: #0073e6;
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.grid-item:active {
+    transform: scale(1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+        margin: 0 60px;
+        text-align: left;
+        padding-left: 50px;    /* Adjust this value to move title left/right */
+    }
+
+    .grid-item {
+        font-size: 1rem;
+    }
+    
+    .category-filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .search-container {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .search-container input {
+        width: 120px;
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .search-container label {
+        font-size: 14px;
+    }
+
+    .menu-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+        height: 33px;
+    }
+}

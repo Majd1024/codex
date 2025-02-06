@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <title>Portfolio Website</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="loader-wrapper">
+        <div class="loading-title">Loading</div>
+        <div class="circular-loader"></div>
+        <div class="loading-text">0%</div>
+    </div>
+    <header>
+        <a href="#" class="logo">Majd</a>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="images/Untitled design.png" alt="your Photo">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Majd</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p style="font-size: 20px;">I'm A Programmer with knowlage of HTML, CSS, JS, and Python. I have experience building dynamic, real-time web application
+              i also post about my projects on my youtube, Tiktok and Instagram. you can check on my <a href="projects.html">Projects</a> page.
+            if you want the source code of any of theese projects you can check on my <a href="https://github.com/Majd1024/My-Work">Github</a> page. or contact me and ill send you the source code of any project you want. If you want to hire me to make you a website also please <a href="contact.html"> Contact us</a></p>
+            </p>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@majdalanini7711"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@majd.102?is_from_webapp=1&sender_device=pc"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://github.com/Majd1024/My-Work"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <a href="contact.html" class="btn">Hire me</a>
+        </div>
+    </section>
+    <script>
+        window.addEventListener('load', () => {
+            const loaderWrapper = document.querySelector('.loader-wrapper');
+            const loadingText = document.querySelector('.loading-text');
+            let progress = 0;
+            
+            const interval = setInterval(() => {
+                progress += 1;
+                loadingText.textContent = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    loaderWrapper.style.opacity = '0';
+                    setTimeout(() => {
+                        loaderWrapper.style.display = 'none';
+                    }, 500);
+                }   
+            }, 100);
+        });
+    </script>
+</body>
+</html>

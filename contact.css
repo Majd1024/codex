@@ -1,0 +1,85 @@
+:root {
+    --background-dark: #121212;
+    --text-dark: #b74b4b;
+    --primary-dark: #b74b4b;
+    --border-dark: #3a3a3a;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(18, 18, 18, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.contact-container:hover {
+    transform: scale(1.05);
+
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-dark);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-dark);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: rgba(50, 50, 50, 0.8);
+    color: var(--text-dark);
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-dark);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #993737;
+
+}
+
+.success-message {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(72, 187, 120, 0.8);
+    color: white;
+    border-radius: 4px;
+}
+
