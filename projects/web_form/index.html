@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Request Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1>Website Request Intake</h1>
+        <p class="sub">
+          Clients fill this form to describe what they want (colors, style, pages, features, inspiration).
+          Submissions are saved locally in this browser for now. You can export them as JSON anytime.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <form id="reqForm"
+        action="https://script.google.com/macros/s/AKfycbyfhAbE2vcdubI6SBtZyMQjTHL8Gcy_1EEn4CVS0D4DcP6sqyc9aom3sWKnH-OND2v7/exec"
+        method="POST"
+        target="hiddenFrame">
+
+        <!-- ✅ these will be filled by JS before submit -->
+        <input type="hidden" name="pagesSelected" id="pagesSelected">
+        <input type="hidden" name="featuresSelected" id="featuresSelected">
+        <input type="hidden" name="logoFileName" id="logoFileName">
+        <input type="hidden" name="imageFilesNames" id="imageFilesNames">
+
+        <div class="grid">
+          <div>
+            <label>Full Name *</label>
+            <input name="fullName" required placeholder="John Doe" />
+          </div>
+          <div>
+            <label>Email *</label>
+            <input name="email" type="email" required placeholder="john@example.com" />
+          </div>
+          <div>
+            <label>Project / Business Name</label>
+            <input name="projectName" placeholder="Brand name" />
+          </div>
+          <div>
+            <label>Deadline</label>
+            <input name="deadline" type="date" />
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Website Type & Style</h2>
+          <div class="grid">
+            <div>
+              <label>Website Type *</label>
+              <select name="websiteType" required>
+                <option value="" disabled selected>Select</option>
+                <option>Business</option>
+                <option>Portfolio</option>
+                <option>Restaurant</option>
+                <option>Landing Page</option>
+                <option>Blog</option>
+                <option>E-commerce</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label>Design Style *</label>
+              <select name="style" required>
+                <option value="" disabled selected>Select</option>
+                <option>Modern</option>
+                <option>Minimal</option>
+                <option>Bold</option>
+                <option>Luxury</option>
+                <option>Playful</option>
+                <option>Corporate</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <label>Pages needed</label>
+            <div class="checks" id="pages">
+              <label class="check"><input type="checkbox" value="Home"> Home</label>
+              <label class="check"><input type="checkbox" value="About"> About</label>
+              <label class="check"><input type="checkbox" value="Services"> Services</label>
+              <label class="check"><input type="checkbox" value="Portfolio"> Portfolio</label>
+              <label class="check"><input type="checkbox" value="Blog"> Blog</label>
+              <label class="check"><input type="checkbox" value="Contact"> Contact</label>
+              <label class="check"><input type="checkbox" value="FAQ"> FAQ</label>
+              <label class="check"><input type="checkbox" value="Other"> Other</label>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <label>Features</label>
+            <div class="checks" id="features">
+              <label class="check"><input type="checkbox" value="Contact Form"> Contact Form</label>
+              <label class="check"><input type="checkbox" value="Booking/Appointment"> Booking/Appointment</label>
+              <label class="check"><input type="checkbox" value="Payments"> Payments</label>
+              <label class="check"><input type="checkbox" value="Live Chat"> Live Chat</label>
+              <label class="check"><input type="checkbox" value="Multi-language"> Multi-language</label>
+              <label class="check"><input type="checkbox" value="Map / Location"> Map / Location</label>
+              <label class="check"><input type="checkbox" value="Reviews / Testimonials"> Reviews / Testimonials</label>
+              <label class="check"><input type="checkbox" value="Admin Panel"> Admin Panel</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Colors & Theme</h2>
+          <div class="row3">
+            <div>
+              <label>Primary Color</label>
+              <input name="primaryColor" type="color" value="#6ea8fe" />
+            </div>
+            <div>
+              <label>Secondary Color</label>
+              <input name="secondaryColor" type="color" value="#111827" />
+            </div>
+            <div>
+              <label>Accent Color</label>
+              <input name="accentColor" type="color" value="#76f7b4" />
+            </div>
+          </div>
+
+          <div class="grid" style="margin-top:12px;">
+            <div>
+              <label>Dark mode?</label>
+              <select name="darkMode">
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+            <div>
+              <label>Font preference (optional)</label>
+              <input name="fonts" placeholder="Example: Poppins, Inter..." />
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Content & Uploads (placeholder for now)</h2>
+          <div class="grid">
+            <div>
+              <label>Logo (file)</label>
+
+              <!-- ✅ removed name="" so it doesn't force multipart upload -->
+              <input id="logoFileInput" type="file" accept="image/*" />
+              <div class="small">We only send the filename (no real upload).</div>
+            </div>
+            <div>
+              <label>Images (multiple)</label>
+
+              <!-- ✅ removed name="" so it doesn't force multipart upload -->
+              <input id="imageFilesInput" type="file" accept="image/*" multiple />
+              <div class="small">We only send filenames (no real upload).</div>
+            </div>
+          </div>
+
+          <div class="grid" style="margin-top:12px;">
+            <div>
+              <label>About text (optional)</label>
+              <textarea name="aboutText" placeholder="Write a short about text..."></textarea>
+            </div>
+            <div>
+              <label>Services / sections (optional)</label>
+              <textarea name="services" placeholder="Example:&#10;- Moving service&#10;- Packing&#10;- Storage"></textarea>
+            </div>
+          </div>
+
+          <div class="grid" style="margin-top:12px;">
+            <div>
+              <label>Contact info to show</label>
+              <textarea name="contactInfo" placeholder="Phone, email, address, opening hours..."></textarea>
+            </div>
+            <div>
+              <label>Social links</label>
+              <textarea name="socialLinks" placeholder="Instagram: ...&#10;TikTok: ...&#10;YouTube: ..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Inspiration</h2>
+          <div class="grid">
+            <div>
+              <label>Example websites (1–5 URLs)</label>
+              <textarea name="exampleLinks" placeholder="https://example.com&#10;https://another.com"></textarea>
+            </div>
+            <div>
+              <label>What do you like about them?</label>
+              <textarea name="likes" placeholder="Colors, layout, animations, etc."></textarea>
+            </div>
+          </div>
+
+          <div class="grid" style="margin-top:12px;">
+            <div>
+              <label>What should we avoid?</label>
+              <textarea name="avoid" placeholder="Too many colors, busy layout..."></textarea>
+            </div>
+            <div>
+              <label>Notes / special requests</label>
+              <textarea name="notes" placeholder="Anything else you want..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <label class="check" style="align-items:flex-start;">
+            <input required type="checkbox" />
+            <span>I confirm I have the rights to use the content I provide (logos/images/text).</span>
+          </label>
+
+          <div class="actions">
+            <button class="primary" type="submit" id="sendBtn">Send Request</button>
+            <button type="reset">Reset</button>
+            <button class="danger" type="button" id="clearAll">Clear Saved Requests</button>
+            <div class="status" id="status">Ready.</div>
+          </div>
+
+          <div class="panel">
+            <h3>Saved Requests (this browser)</h3>
+            <p>
+              This is a frontend-only version. Requests are saved in <span class="muted">localStorage</span>.
+              You can export them as JSON and use them later when you add a backend.
+            </p>
+
+            <hr class="hr" />
+
+            <div class="actions">
+              <button type="button" id="exportJson">Export JSON</button>
+              <button type="button" id="copyJson">Copy JSON</button>
+              <span class="status" id="exportStatus"></span>
+            </div>
+
+            <pre id="jsonOut" style="display:none;"></pre>
+
+            <div class="list" id="list"></div>
+            <div class="small">Tip: if you want real submissions to go to email/database later, we can connect Firebase or Apps Script in 5 minutes.</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <iframe name="hiddenFrame" id="hiddenFrame" style="display:none;"></iframe>
+
+  <script src="script.js"></script>
+</body>
+</html>

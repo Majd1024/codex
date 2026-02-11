@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(240, 229, 164);
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* This arranges items vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adds some space between the h1 and searchbox */
+}
+
+h1 {
+  font-size: 2em;
+  color: #24233A;
+  background-image: linear-gradient(45deg, #FF6B6B, #FFD93D, #6BCB77, #4D96FF);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 3s ease-in-out infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+  .container .searchbox {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 53px;
+    transition: 0.4s linear;
+    overflow: hidden;
+  }
+  .container .searchbox .searchbox__input {
+    display: block;
+    appearance: none;
+    width: 100%;
+    border: #24233A;
+    outline: none;
+    border-radius: 50px;
+    background-color: #24233A;
+    padding: 15px;
+    color: #24233A;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.4s linear;
+  }
+  .container .searchbox .searchbox__input::placeholder {
+    color: #24233A;
+  }
+  .container .searchbox .searchbox__icon {
+    position: absolute;
+    right: calc(53px / 2);
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+  .container .searchbox .searchbox__icon path {
+    fill: #00F494;
+    transition: 0.4s linear;
+  }
+  .container .searchbox:focus-within {
+    max-width: 300px;
+  }
+  .container .searchbox:focus-within .searchbox__input {
+    background-color: #FFF;
+    padding-right: 50px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
+  }
+  .container .searchbox:focus-within .searchbox__icon path {
+    fill: #24233A;
+  }

@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff7a7a, #ffb3b3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Game Container Styles */
+  .game-container {
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    transform: translateY(-20px);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Hover effect to lift the game container */
+  .game-container:hover {
+    transform: translateY(0);
+  }
+  
+  /* Heading Styles */
+  h1 {
+    color: #333;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Emoji Display Styles */
+  .emoji-display {
+    font-size: 60px;
+    margin: 20px 0;
+    animation: bounce 1s ease infinite;
+  }
+  
+  /* Bounce animation */
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Input Field Styles */
+  .input-field {
+    padding: 12px;
+    font-size: 18px;
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid #ff6f61;
+    margin-top: 10px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.7); /* Transparent background */
+  }
+  
+  /* Input focus effect */
+  .input-field:focus {
+    border-color: #ff3b3b;
+    box-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
+  }
+  
+  /* Submit Button Styles */
+  .submit-btn {
+    padding: 12px 20px;
+    background: #ff6f61;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .submit-btn:hover {
+    background: #ff3b3b;
+    transform: scale(1.1);
+  }
+  
+  /* Result and Final Message Styles */
+  .result-display,
+  .final-message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .result-display {
+    font-size: 20px;
+  }
+  
+  .result-display.correct {
+    color: #4CAF50; /* Green for correct */
+  }
+  
+  .result-display.wrong {
+    color: #FF0000; /* Red for wrong */
+  }
+  
+  .final-message {
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

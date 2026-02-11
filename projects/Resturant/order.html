@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Selection | Saffron Table</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .checkout-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .wolt-redirect-card {
+            background: #00c2e8; /* Wolt Blue */
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .wolt-btn {
+            background: white;
+            color: #00c2e8;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+        .empty-msg { text-align: center; padding: 50px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo serif">Saffron Table</a>
+    <nav>
+        <ul>
+            <li><a href="menu.html">Back to Menu</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="container checkout-container">
+    <h2 class="serif section-title">Review Your Selection</h2>
+    
+    <div class="card" id="cart-display">
+        <div id="cart-items"></div>
+        <div id="cart-total" style="font-size: 1.5rem; margin-top: 20px; font-weight: bold;"></div>
+        
+        <div class="wolt-redirect-card">
+            <h3>Ready to enjoy?</h3>
+            <p>We partner with <strong>Wolt</strong> for lightning-fast delivery.</p>
+            <a href="https://wolt.com/en/grc/athens/restaurant/saffron-table" target="_blank" class="wolt-btn">
+                Complete Order on Wolt
+            </a>
+            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.9;">
+                (Note: Prices on Wolt may vary slightly based on delivery distance)
+            </p>
+        </div>
+        
+        <button onclick="localStorage.removeItem('saffron_cart'); location.reload();" 
+                style="background:none; border:none; color:#999; cursor:pointer; margin-top:20px; text-decoration:underline;">
+            Clear selection and start over
+        </button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+<script>
+    // Specific logic for order.html to display the cart
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartItems = JSON.parse(localStorage.getItem('saffron_cart')) || [];
+        const container = document.getElementById('cart-items');
+        const totalEl = document.getElementById('cart-total');
+        
+        if (cartItems.length === 0) {
+            document.getElementById('cart-display').innerHTML = `
+                <div class="empty-msg">
+                    <p>Your selection is empty.</p>
+                    <a href="menu.html" class="btn btn-primary">Go to Menu</a>
+                </div>`;
+            return;
+        }
+
+        let total = 0;
+        cartItems.forEach(item => {
+            total += item.price;
+            container.innerHTML += `
+                <div style="display:flex; justify-content:space-between; padding: 10px 0; border-bottom: 1px solid #eee;">
+                    <span>${item.name}</span>
+                    <strong>€${item.price.toFixed(2)}</strong>
+                </div>`;
+        });
+        totalEl.innerText = `Subtotal: €${total.toFixed(2)}`;
+    });
+</script>
+</body>
+</html>

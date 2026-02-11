@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Portfolio Website</title>
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo" data-i18n="logoText">Majd</a>
+
+        <!-- Language Switcher (Centered in header) -->
+        <div class="lang-switcher" aria-label="Language switch">
+            <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+            <span class="lang-sep">/</span>
+            <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+            <span class="lang-sep">/</span>
+            <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
+        </div>
+
+        <div class="menu-btn" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+            <a href="#" class="active" data-i18n="navHome">Home</a>
+            <a href="projects.html" data-i18n="navProjects">Projects</a>
+            <a href="contact.html" data-i18n="navContact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-img">
+            <img src="images/picture.png" alt="your Photo" />
+        </div>
+
+        <div class="home-content">
+            <h1 data-i18n-html="heroTitle">Hi, It's <span>Majd</span></h1>
+
+            <h3 class="typing-text">
+                <span data-i18n="heroSubtitlePrefix">I'm a</span>
+                <span class="job-title" data-i18n="heroJob">Web Developer</span>
+            </h3>
+
+            <p class="intro" data-i18n-html="introText">
+                I'm a Programmer with knowledge of HTML, CSS and JS.
+                I build dynamic web applications and share my projects on YouTube,
+                TikTok, and Instagram.
+                <br><br>
+                Check my <a href="projects.html">Projects</a> page or my
+                <a href="https://github.com/Majd1024/Projects">GitHub</a>.
+                <br><br>
+                If you want to hire me, please <a href="contact.html">Contact me</a>.
+            </p>
+
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@majdalanini7711" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@majd.102" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://github.com/Majd1024/Projects" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+            <a href="contact.html" class="btn" data-i18n="hireBtn">Hire me</a>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendar – HTML • CSS • JS</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Calendar -->
+    <div class="card" id="calendarCard">
+      <div class="topbar">
+        <div class="row">
+          <div class="title">
+            <span>Calendar</span>
+            <span class="pill" id="monthYearPill">—</span>
+          </div>
+          <div class="nav">
+            <button class="btn iconbtn" id="prevBtn" aria-label="Previous month" title="Previous month">‹</button>
+            <button class="btn iconbtn" id="nextBtn" aria-label="Next month" title="Next month">›</button>
+          </div>
+        </div>
+
+        <div class="row" style="width:100%">
+          <div class="controls">
+            <button class="btn primary" id="todayBtn" title="Jump to today">Today</button>
+
+            <div class="control" title="Select month">
+              <span style="color:var(--muted);font-size:12px;">Month</span>
+              <select id="monthSelect" aria-label="Month"></select>
+            </div>
+
+            <div class="control" title="Select year">
+              <span style="color:var(--muted);font-size:12px;">Year</span>
+              <select id="yearSelect" aria-label="Year"></select>
+            </div>
+
+            <div class="searchbox" title="Search across all events">
+              <span style="color:var(--muted2);">🔎</span>
+              <input id="globalSearch" type="text" placeholder="Search events (all dates)..." autocomplete="off"/>
+              <button class="btn mini" id="clearSearchBtn" type="button" title="Clear search">Clear</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="searchResults" id="searchResults">
+          <div class="srHead">
+            <span id="srCount">0 results</span>
+            <span style="opacity:.9;">Click a result to jump</span>
+          </div>
+          <div class="srList" id="srList"></div>
+        </div>
+      </div>
+
+      <div class="calendarWrap">
+        <div class="weekdays">
+          <div class="weekday">Mon</div>
+          <div class="weekday">Tue</div>
+          <div class="weekday">Wed</div>
+          <div class="weekday">Thu</div>
+          <div class="weekday">Fri</div>
+          <div class="weekday">Sat</div>
+          <div class="weekday">Sun</div>
+        </div>
+        <div class="grid" id="grid" aria-label="Calendar grid"></div>
+      </div>
+
+      <div class="footer">Built with HTML • CSS • JavaScript</div>
+    </div>
+
+    <!-- Side Panel -->
+    <div class="card side" id="sideCard">
+      <div class="sideHead">
+        <div>
+          <h2 id="selectedTitle">Selected date</h2>
+          <div class="sub" id="selectedSub">—</div>
+        </div>
+        <div class="pill" id="selectedKey">YYYY-MM-DD</div>
+      </div>
+
+      <div class="panel">
+        <div>
+          <div class="sectionTitle">Add / Edit event</div>
+          <form class="form" id="eventForm">
+            <div class="fieldRow3">
+              <input class="input" id="titleInput" type="text" placeholder="Title (required) e.g., Math Exam" required />
+              <input class="input" id="timeInput" type="time" />
+              <!-- <div class="selectWrap">
+                <select id="categorySelect" aria-label="Category">
+                  <option value="Exam">Exam</option>
+                  <option value="Birthday">Birthday</option>
+                  <option value="Meeting">Meeting</option>
+                  <option value="Reminder">Reminder</option>
+                  <option value="Other" selected>Other</option>
+                </select> -->
+              </div>
+            </div>
+
+            <textarea class="textarea" id="notesInput" placeholder="Notes (optional)"></textarea>
+
+            <div class="formActions">
+              <button class="btn" type="button" id="cancelEditBtn" style="display:none;">Cancel</button>
+              <button class="btn primary" type="submit" id="saveBtn">Add event</button>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <div class="sectionTitle">Events for this date</div>
+
+          <div class="searchbox" title="Filter events for selected date">
+            <span style="color:var(--muted2);">🔎</span>
+            <input id="dayFilter" type="text" placeholder="Filter today's events..." autocomplete="off"/>
+            <button class="btn mini" id="clearDayFilterBtn" type="button" title="Clear filter">Clear</button>
+          </div>
+
+          <div class="list" id="eventList" style="margin-top:10px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

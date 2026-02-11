@@ -1,0 +1,300 @@
+    :root{
+      --bg:#0b0d12;
+      --card:#121625;
+      --muted:rgba(233,238,252,.75);
+      --line:rgba(255,255,255,.10);
+      --field:#0f1320;
+      --text:#e9eefc;
+      --primary:#6ea8fe;
+      --ok:#76f7b4;
+      --bad:#ff8b8b;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      padding:28px 14px;
+    }
+    .wrap{ max-width:980px; margin:0 auto; }
+    .top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+      margin-bottom:12px;
+    }
+    h1{ margin:0; font-size:28px; }
+    .sub{
+      margin:6px 0 0;
+      color:var(--muted);
+      line-height:1.5;
+      max-width:740px;
+      font-size:14px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 760px){
+      .grid{ grid-template-columns:1fr; }
+      .top{ flex-direction:column; }
+    }
+
+    label{ display:block; font-size:13px; margin:0 0 7px; color:rgba(233,238,252,.9); }
+    input, select, textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:var(--field);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{ min-height:110px; resize:vertical; }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(110,168,254,.7);
+      box-shadow: 0 0 0 3px rgba(110,168,254,.15);
+    }
+
+    .section{
+      margin-top:16px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size:15px;
+      color:rgba(233,238,252,.9);
+    }
+
+    .checks{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:8px;
+    }
+    @media (max-width: 760px){
+      .checks{ grid-template-columns:1fr; }
+    }
+    .check{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background: rgba(255,255,255,.02);
+      user-select:none;
+    }
+    .check input{ width:18px; height:18px; }
+
+    .row3{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 760px){
+      .row3{ grid-template-columns:1fr; }
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:14px;
+    }
+    button{
+      border:0;
+      padding:12px 14px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:700;
+      background:transparent;
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+    button.primary{
+      background:var(--primary);
+      color:#0b0d12;
+      border-color:transparent;
+    }
+    button.danger{
+      border-color: rgba(255,139,139,.35);
+      color: rgba(255,139,139,.9);
+    }
+    .status{
+      margin-left:auto;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .status.ok{ color:var(--ok); }
+    .status.bad{ color:var(--bad); }
+
+    .panel{
+      margin-top:14px;
+      padding:14px;
+      border-radius:14px;
+      border:1px dashed rgba(255,255,255,.16);
+      background: rgba(255,255,255,.02);
+    }
+    .panel h3{ margin:0 0 8px; font-size:14px; }
+    .panel p{ margin:0; color:var(--muted); font-size:13px; line-height:1.45; }
+
+    .list{
+      margin-top:10px;
+      display:grid;
+      gap:10px;
+    }
+    .item{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background: rgba(255,255,255,.02);
+    }
+    .item .meta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      color:rgba(233,238,252,.75);
+      font-size:12px;
+      margin-top:6px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      padding:4px 8px;
+      border-radius:999px;
+    }
+    .muted{ color:var(--muted); }
+    .small{ font-size:12px; color:rgba(233,238,252,.65); margin-top:8px; line-height:1.4; }
+    .hr{ height:1px; background:var(--line); margin:12px 0; border:0; }
+    .linkbtn{ text-decoration:underline; cursor:pointer; }
+    pre{
+      margin:10px 0 0;
+      padding:12px;
+      border-radius:12px;
+      background:#0a0d18;
+      border:1px solid rgba(255,255,255,.10);
+      overflow:auto;
+      max-height:260px;
+      font-size:12px;
+      color:rgba(233,238,252,.9);
+    }
+    
+    /* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 14px 8px;
+  }
+
+  h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .sub {
+    font-size: 13px;
+  }
+
+  .card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  /* Force all grids to single column */
+  .grid,
+  .checks,
+  .row3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* prevents iOS zoom */
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  .check {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .check input {
+    width: 20px;
+    height: 20px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .status {
+    margin-left: 0;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .panel {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .item {
+    padding: 12px;
+  }
+
+  .item strong {
+    font-size: 15px;
+  }
+
+  .meta {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  pre {
+    font-size: 11px;
+    max-height: 200px;
+  }
+}
+
+    
+    @media (max-width: 600px) {
+  .actions {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(11,13,18,.95), rgba(11,13,18,.7));
+    padding: 10px 0 6px;
+    z-index: 10;
+  }
+}

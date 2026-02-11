@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Emoji Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Guess the Answer</h1> <hr>
+    <div id="emoji-container" class="emoji-display"></div>
+    <input type="text" id="user-input" placeholder="Enter your guess" class="input-field" autoComplete="off">
+    <button onclick="submitAnswer()" class="submit-btn">Submit Answer</button>
+    <div id="result" class="result-display"></div>
+    <div id="final-message" class="final-message"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

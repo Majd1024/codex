@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Book | Saffron Table</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><a href="index.html" class="logo serif">Saffron Table</a></header>
+<section class="container" style="max-width:600px;">
+    <h2 class="serif section-title">Book a Table</h2>
+    <div class="card">
+        <form onsubmit="alert('Confirmed! Check your phone for SMS.'); return false;">
+            <label>Date</label><input type="date" required onchange="checkAvailability()">
+            <label>Guests</label><select><option>2 People</option><option>4 People</option></select>
+            <div id="slots"></div>
+            <label>Name</label><input type="text" placeholder="Your Name" required>
+            <label>Phone Number</label><input type="tel" placeholder="Phone" required>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Confirm via SMS</button>
+        </form>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>

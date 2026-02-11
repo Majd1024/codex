@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== PAGE ===== */
+body {
+    background: #000000;
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Important for mobile spacing */
+    padding: 20px;
+}
+
+/* ===== CONTAINER ===== */
+.contact-container {
+    background: #0b0b0b;
+    width: 100%;
+    max-width: 520px;
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid #1a1a1a;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.25);
+}
+
+/* ===== TITLE ===== */
+h1 {
+    margin: 0 0 18px;
+    text-align: center;
+    color: #ff1a1a;
+    letter-spacing: 1px;
+    font-size: 26px;
+}
+
+/* ===== INPUT GROUP ===== */
+.input-group {
+    margin-bottom: 14px;
+}
+
+/* ===== LABEL ===== */
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #b3b3b3;
+    font-size: 15px;
+}
+
+/* ===== INPUTS ===== */
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #1f1f1f;
+    outline: none;
+    background: #050505;
+    color: #ffffff;
+    font-size: 16px; /* prevents iOS zoom */
+    transition: 0.3s;
+
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #666;
+}
+
+/* ===== FOCUS ===== */
+input:focus,
+textarea:focus {
+    border-color: #ff1a1a;
+    box-shadow: 0 0 8px rgba(255, 26, 26, 0.4);
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+    resize: none;
+    min-height: 140px;
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    background: linear-gradient(135deg, #ff1a1a, #b30000);
+    color: #ffffff;
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 26, 26, 0.6);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+.success {
+    display: none;
+    margin-top: 14px;
+    text-align: center;
+    color: #ff4d4d;
+    font-size: 14px;
+}
+
+/* ===== SMALL PHONES ===== */
+@media (max-width: 360px) {
+    .contact-container {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}

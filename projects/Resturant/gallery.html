@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Gallery | Saffron Table</title><link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+        .gallery-item { height: 250px; cursor: pointer; border-radius: 8px; overflow: hidden; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center; }
+        #lightbox img { max-width: 90%; max-height: 80%; }
+    </style>
+</head>
+<body>
+<header><a href="index.html" class="logo serif">Saffron Table</a></header>
+<section class="container">
+    <h2 class="serif section-title">Our Gallery</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Dish+1')"><img src="https://placehold.co/400x400?text=Dish+1"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Dish+2')"><img src="https://placehold.co/400x400?text=Dish+2"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Dish+3')"><img src="https://placehold.co/400x400?text=Dish+3"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Interior+1')"><img src="https://placehold.co/400x400?text=Interior+1"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Interior+2')"><img src="https://placehold.co/400x400?text=Interior+2"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Chef')"><img src="https://placehold.co/400x400?text=Chef"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Bar')"><img src="https://placehold.co/400x400?text=Bar"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Wine')"><img src="https://placehold.co/400x400?text=Wine"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Detail+1')"><img src="https://placehold.co/400x400?text=Detail+1"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Detail+2')"><img src="https://placehold.co/400x400?text=Detail+2"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Outdoor')"><img src="https://placehold.co/400x400?text=Outdoor"></div>
+        <div class="gallery-item" onclick="openLightbox('https://placehold.co/800x600?text=Atmosphere')"><img src="https://placehold.co/400x400?text=Atmosphere"></div>
+    </div>
+</section>
+<div id="lightbox" onclick="closeLightbox()"><img id="lb-img" src=""></div>
+<script src="script.js"></script>
+</body>
+</html>

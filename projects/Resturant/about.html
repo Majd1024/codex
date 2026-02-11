@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Saffron Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .social-link-card {
+            background: white;
+            color: var(--dark);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            border: 1px solid var(--gray);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Official Brand Colors on Hover */
+        .social-link-card i {
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* Instagram Styling */
+        .insta:hover { border-color: #E1306C; color: #E1306C; }
+        
+        /* TikTok Styling */
+        .tiktok:hover { border-color: #000000; color: #fe2c55; }
+        
+        /* YouTube Styling */
+        .yt:hover { border-color: #FF0000; color: #FF0000; }
+
+        .social-link-card:hover i {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo serif">Saffron Table</a>
+    <div class="hamburger">☰</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html" style="color: var(--primary);">About</a></li>
+            <li><a href="reservations.html">Book Table</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://wolt.com" target="_blank" class="nav-cta">Order on Wolt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="container">
+    <div class="grid" style="align-items:center;">
+        <div>
+            <img src="https://placehold.co/600x800/1a1a1a/c5a059?text=Our+Kitchen" alt="Chef" style="width:100%; border-radius:8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        </div>
+        
+        <div>
+            <h2 class="serif" style="font-size: 3rem; margin-bottom: 20px;">Our Story</h2>
+            <p>Founded in 1994, Saffron Table brings the authentic flavors of the Mediterranean to the heart of the city. We believe in the power of fresh ingredients and the tradition of the charcoal grill.</p>
+            
+            <hr style="margin: 40px 0; border: 0; border-top: 1px solid var(--gray);">
+            
+            <h3 class="serif">Follow Our Journey</h3>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">Check out our latest dishes and behind-the-scenes content.</p>
+            
+            <div class="social-grid">
+                <a href="https://instagram.com" target="_blank" class="social-link-card insta">
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="social-link-card tiktok">
+                    <i class="fa-brands fa-tiktok"></i>
+                    TikTok
+                </a>
+                <a href="https://youtube.com" target="_blank" class="social-link-card yt">
+                    <i class="fa-brands fa-youtube"></i>
+                    YouTube
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Saffron Table Mediterranean Grill.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
