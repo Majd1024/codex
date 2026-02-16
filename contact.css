@@ -17,6 +17,13 @@ body {
     padding: 20px;
 }
 
+/* ===== RESPONSIVE PADDING ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+}
+
 /* ===== CONTAINER ===== */
 .contact-container {
     background: #0b0b0b;
@@ -28,6 +35,21 @@ body {
     box-shadow: 0 0 40px rgba(255, 0, 0, 0.25);
 }
 
+/* ===== LAPTOP/TABLET SIZES ===== */
+@media (min-width: 768px) {
+    .contact-container {
+        max-width: 600px;
+        padding: 32px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-container {
+        max-width: 650px;
+        padding: 40px;
+    }
+}
+
 /* ===== TITLE ===== */
 h1 {
     margin: 0 0 18px;
@@ -37,9 +59,22 @@ h1 {
     font-size: 26px;
 }
 
+@media (min-width: 768px) {
+    h1 {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+}
+
 /* ===== INPUT GROUP ===== */
 .input-group {
     margin-bottom: 14px;
+}
+
+@media (min-width: 768px) {
+    .input-group {
+        margin-bottom: 20px;
+    }
 }
 
 /* ===== LABEL ===== */
@@ -48,6 +83,13 @@ label {
     margin-bottom: 6px;
     color: #b3b3b3;
     font-size: 15px;
+}
+
+@media (min-width: 768px) {
+    label {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
 }
 
 /* ===== INPUTS ===== */
@@ -65,6 +107,23 @@ textarea {
 
     -webkit-appearance: none;
     appearance: none;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 480px) {
+    input,
+    textarea {
+        padding: 16px;
+        font-size: 16px; /* Keep 16px to prevent iOS zoom */
+    }
+}
+
+@media (min-width: 768px) {
+    input,
+    textarea {
+        padding: 16px;
+        font-size: 17px;
+    }
 }
 
 input::placeholder,
@@ -85,6 +144,12 @@ textarea {
     min-height: 140px;
 }
 
+@media (min-width: 768px) {
+    textarea {
+        min-height: 160px;
+    }
+}
+
 /* ===== BUTTON ===== */
 button {
     width: 100%;
@@ -100,6 +165,17 @@ button {
     background: linear-gradient(135deg, #ff1a1a, #b30000);
     color: #ffffff;
     transition: 0.25s;
+    
+    /* Better touch target for mobile */
+    min-height: 48px;
+}
+
+@media (min-width: 768px) {
+    button {
+        padding: 16px;
+        font-size: 17px;
+        margin-top: 8px;
+    }
 }
 
 button:hover {
@@ -129,5 +205,33 @@ button:active {
 
     h1 {
         font-size: 22px;
+    }
+    
+    input,
+    textarea,
+    button {
+        font-size: 16px; /* Keep 16px to prevent iOS zoom */
+    }
+}
+
+/* ===== MEDIUM PHONES ===== */
+@media (min-width: 361px) and (max-width: 480px) {
+    .contact-container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* ===== LARGE PHONES / SMALL TABLETS ===== */
+@media (min-width: 481px) and (max-width: 767px) {
+    .contact-container {
+        padding: 24px;
+    }
+    
+    h1 {
+        font-size: 28px;
     }
 }
